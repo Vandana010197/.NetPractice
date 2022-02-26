@@ -1,0 +1,29 @@
+﻿@model IEnumerable< CategoryAdio.Models.Customer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+   <table class="table table-bordered">
+       <tr>
+           <th>Id</th>
+           <th>CustomerName</th>
+           <th>Email</th>
+           <th>Contact</th>
+           <th>ProductId</th>
+           <th>PName</th>
+       </tr>
+       @foreach(var cust in Model)
+            {
+                <tr>
+                    <td>@cust.Id</td>
+                    <td>@cust.CustomerName</td>
+                    <td>@cust.Email</td>
+                    <td>@cust.Contact</td>
+                    <td>@cust.ProductId</td>
+                    <td>@cust.PName</td>
+                </tr>
+            }
+   </table>
+</div>

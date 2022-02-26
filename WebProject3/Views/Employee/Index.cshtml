@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebProject3.Models.Location>
+@{
+}
+<a asp-action="Create" asp-controller="Employee" class="btn btn-outline-warning">Create</a>
+
+<h2>Locations</h2>
+<table class="table table-bordered">
+    <tr>
+        
+        <th>Location</th>
+        <th>Details</th>
+    </tr>
+    @foreach(var location in Model)
+            {
+                <tr>
+                    <td><a asp-action="EmployeeList" asp-controller="Employee" 
+                           asp-route-id="@location.Id">@location.Address</a></td>
+                    <td>@location.Details</td>
+                </tr>
+            }
+</table>

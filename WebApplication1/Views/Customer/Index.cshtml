@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApplication1.Models.Customer>
+<a asp-action="Create" asp-controller="Employee" class="btn btn-outline-warning">Create</a>
+<table class="table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+    @foreach(var cust in Model)
+            {
+                <td>@cust.Id</td>
+                <td>@cust.Name</td>
+                <td>@cust.Email</td>
+                <td>@cust.Contact</td>
+            }
+</table>

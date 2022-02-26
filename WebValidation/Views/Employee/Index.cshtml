@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebValidation.Models.Employee>
+@{
+}
+
+<a asp-action="Create" asp-controller="Employee" class="btn btn-info">Create</a>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var employee in Model)
+            {
+    <tr>
+        <td>@employee.Id</td>
+        <td>@employee.Name</td>
+        <td>@employee.Email</td>
+        <td>@employee.Contact</td>
+        <td>@employee.Address</td>
+        <td>
+            <a asp-action="Edit" asp-controller="Employee" asp-route-id="@employee.Id" 
+               onclick="return confirm('Are you sure to edit this record?')">Edit</a>||
+            <a asp-action="Delete" asp-controller="Employee" asp-route-id="@employee.Id" 
+               onclick="return confirm('Are you Sure to delete this record?')">Delete</a>
+        </td>
+    </tr>
+            }
+</table>
